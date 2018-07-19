@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		221E451A20F78496009323B5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221E451920F78496009323B5 /* Login.storyboard */; };
-		221E451C20F78510009323B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E451B20F78510009323B5 /* LoginViewController.swift */; };
 		22EC341120EE6F1600EFF5FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC341020EE6F1600EFF5FC /* AppDelegate.swift */; };
 		22EC341820EE6F1700EFF5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EC341720EE6F1700EFF5FC /* Assets.xcassets */; };
 		22EC341B20EE6F1700EFF5FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22EC341920EE6F1700EFF5FC /* LaunchScreen.storyboard */; };
@@ -16,8 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		221E451920F78496009323B5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		221E451B20F78510009323B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22EC340D20EE6F1600EFF5FC /* TVShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EC341020EE6F1600EFF5FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22EC341720EE6F1700EFF5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,19 +36,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		221E451820F78459009323B5 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				221E451920F78496009323B5 /* Login.storyboard */,
-				221E451B20F78510009323B5 /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		22EC340420EE6F1600EFF5FC = {
 			isa = PBXGroup;
 			children = (
-				221E451820F78459009323B5 /* Login */,
 				22EC340F20EE6F1600EFF5FC /* TVShows */,
 				22EC340E20EE6F1600EFF5FC /* Products */,
 				C54F1951D151F7EC0538F296 /* Pods */,
@@ -157,7 +143,6 @@
 			files = (
 				22EC341B20EE6F1700EFF5FC /* LaunchScreen.storyboard in Resources */,
 				22EC341820EE6F1700EFF5FC /* Assets.xcassets in Resources */,
-				221E451A20F78496009323B5 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +174,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221E451C20F78510009323B5 /* LoginViewController.swift in Sources */,
 				22EC341120EE6F1600EFF5FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

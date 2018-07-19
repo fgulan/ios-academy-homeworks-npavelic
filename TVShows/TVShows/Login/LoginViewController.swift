@@ -16,8 +16,21 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    private func launchHomeScreen() {
+        let homeStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeViewController = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController")
+        navigationController?.pushViewController(homeViewController, animated: true)
+    }
+    
     @IBAction func onRememberMeClick(_ sender: UIButton) {
         rememberMeButton.isSelected = !rememberMeButton.isSelected
     }
     
+    @IBAction func onLoginClick(_ sender: UIButton) {
+        launchHomeScreen()
+    }
+    
+    @IBAction func onCreateAccountClick(_ sender: UIButton) {
+        launchHomeScreen()
+    }
 }

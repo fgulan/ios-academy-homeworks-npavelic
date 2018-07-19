@@ -10,7 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var rememberMeButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func onRememberMeClick(_ sender: UIButton) {
+        rememberMeButton.isSelected = !rememberMeButton.isSelected
+    }
+    
 }

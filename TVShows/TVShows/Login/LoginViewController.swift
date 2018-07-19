@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import Alamofire
+import CodableAlamofire
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var rememberMeButton: UIButton!
+    
+    private var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +31,31 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(homeViewController, animated: true)
     }
     
+    private func register(email: String, password: String) {
+        let parameters: [String: String] = [
+            "email": email,
+            "password": password
+        ]
+        
+        Alamofire
+            .request("https://api.infinum.academy/api/users",
+                     method: .post,
+                     parameters: parameters,
+                     encoding: JSONEncoding.default)
+            .validate()
+            .responseDecodableObject(keyPath: "data", decoder: JSONDecoder()) {
+                (response: DataResponse<User>) in
+                switch response.result {
+                case .success(let user):
+                    SVProgressHUD.dismiss()
+                    self.user = user
+                    self.launchHomeScreen()
+                case .failure(let error):
+                    print("API failure: \(error)")
+                }
+        }
+    }
+    
     @IBAction func onRememberMeClick(_ sender: UIButton) {
         rememberMeButton.isSelected = !rememberMeButton.isSelected
     }
@@ -31,6 +65,18 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onCreateAccountClick(_ sender: UIButton) {
-        launchHomeScreen()
+        SVProgressHUD.show()
+        
+        guard let email = emailTextField.text, !email.isEmpty else {
+            SVProgressHUD.dismiss()
+            return
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            SVProgressHUD.dismiss()
+            return
+        }
+        
+        register(email: email, password: password)
     }
 }

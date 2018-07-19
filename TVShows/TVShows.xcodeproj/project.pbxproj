@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2263D8E1210132B200E860D3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263D8E0210132B200E860D3 /* HomeViewController.swift */; };
 		2263D8E3210132DA00E860D3 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2263D8E2210132DA00E860D3 /* Home.storyboard */; };
+		2263D8EB21013C2900E860D3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263D8EA21013C2900E860D3 /* User.swift */; };
 		22E3AAE321010CD4005DBF80 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E3AAE221010CD4005DBF80 /* LoginViewController.swift */; };
 		22E3AAE521010D2C005DBF80 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E3AAE421010D2C005DBF80 /* Login.storyboard */; };
 		22EC341120EE6F1600EFF5FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC341020EE6F1600EFF5FC /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		2263D8E0210132B200E860D3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2263D8E2210132DA00E860D3 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		2263D8EA21013C2900E860D3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		22E3AAE221010CD4005DBF80 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		22E3AAE421010D2C005DBF80 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		22EC340D20EE6F1600EFF5FC /* TVShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +55,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		2263D8E921013C1900E860D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2263D8EA21013C2900E860D3 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		22E3AAE121010CB1005DBF80 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		22EC340F20EE6F1600EFF5FC /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
+				2263D8E921013C1900E860D3 /* Model */,
 				2263D8DF2101329600E860D3 /* Home */,
 				22E3AAE121010CB1005DBF80 /* Login */,
 				22EC341020EE6F1600EFF5FC /* AppDelegate.swift */,
@@ -229,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2263D8EB21013C2900E860D3 /* User.swift in Sources */,
 				22E3AAE321010CD4005DBF80 /* LoginViewController.swift in Sources */,
 				22EC341120EE6F1600EFF5FC /* AppDelegate.swift in Sources */,
 				2263D8E1210132B200E860D3 /* HomeViewController.swift in Sources */,

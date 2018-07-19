@@ -146,6 +146,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="SmX-Dr-f0z"/>
                     <connections>
+                        <outlet property="emailTextField" destination="xV4-dq-BW6" id="Jue-d8-qr5"/>
+                        <outlet property="passwordTextField" destination="nHR-fT-GyK" id="EwQ-oe-Jxz"/>
                         <outlet property="rememberMeButton" destination="bzQ-u9-ZFf" id="3aM-um-PWg"/>
                     </connections>
                 </viewController>

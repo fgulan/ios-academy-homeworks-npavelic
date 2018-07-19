@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     
     private var user: User?
     
+    private var loginData: LoginData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,7 +33,37 @@ class LoginViewController: UIViewController {
         navigationController?.pushViewController(homeViewController, animated: true)
     }
     
+    private func login(email: String, password: String) {
+        SVProgressHUD.show()
+
+        let parameters: [String: String] = [
+            "email": email,
+            "password": password
+        ]
+        
+        Alamofire
+            .request("https://api.infinum.academy/api/users/sessions",
+                     method: .post,
+                     parameters: parameters,
+                     encoding: JSONEncoding.default)
+            .validate()
+            .responseDecodableObject(keyPath: "data", decoder: JSONDecoder()) {
+                (response: DataResponse<LoginData>) in
+                switch response.result {
+                case .success(let loginData):
+                    SVProgressHUD.dismiss()
+                    self.loginData = loginData
+                    self.launchHomeScreen()
+                case .failure(let error):
+                    SVProgressHUD.dismiss()
+                    print("API failure: \(error)")
+                }
+        }
+    }
+    
     private func register(email: String, password: String) {
+        SVProgressHUD.show()
+
         let parameters: [String: String] = [
             "email": email,
             "password": password
@@ -49,8 +81,9 @@ class LoginViewController: UIViewController {
                 case .success(let user):
                     SVProgressHUD.dismiss()
                     self.user = user
-                    self.launchHomeScreen()
+                    self.login(email: email, password: password)
                 case .failure(let error):
+                    SVProgressHUD.dismiss()
                     print("API failure: \(error)")
                 }
         }
@@ -61,19 +94,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLoginClick(_ sender: UIButton) {
-        launchHomeScreen()
-    }
-    
-    @IBAction func onCreateAccountClick(_ sender: UIButton) {
-        SVProgressHUD.show()
-        
         guard let email = emailTextField.text, !email.isEmpty else {
-            SVProgressHUD.dismiss()
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            SVProgressHUD.dismiss()
+            return
+        }
+        
+        login(email: email, password: password)
+    }
+    
+    @IBAction func onCreateAccountClick(_ sender: UIButton) {
+        guard let email = emailTextField.text, !email.isEmpty else {
+            return
+        }
+        
+        guard let password = passwordTextField.text, !password.isEmpty else {
             return
         }
         
